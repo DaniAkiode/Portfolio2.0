@@ -49,6 +49,12 @@ class Level1 extends Component {
         this.setState({randomTense: randomTense})
     }
 
+    handleRestart = () => {
+        this.setState({ timer: 10, timeOut: false, wrongAnswer: ""})
+    
+        this.startTimeOut();
+    }
+
     render() {
         return (
             <div style={{padding: '1rem', border: '1px solid grey', borderRadius: '4px', maxWidth:400, margin: '3rem auto' }}>
@@ -92,13 +98,13 @@ class Level1 extends Component {
                 </form>
                 {/*Timer*/}
                 <div style= {{ display: 'flex' , justifyContent: 'space-between' }}>
-                    <Button>5</Button>
-                    <Button>4</Button>
-                    <Button>3</Button>
-                    <Button>2</Button>
-                    <Button>1</Button>
+                    <Button className={`${this.state.timer <= 8 && 'disabled'}`}>5</Button>
+                    <Button className={`${this.state.timer <= 6 && 'disabled'}`}>4</Button>
+                    <Button className={`${this.state.timer <= 4 && 'disabled'}`}>3</Button>
+                    <Button className={`${this.state.timer <= 2 && 'disabled'}`}>2</Button>
+                    <Button className={`${this.state.timer <= 0 && 'disabled'}`}>1</Button>
                     <Button
-                    >
+                    onChange={this.handleRestart}>
                         Click to Restart
                         </Button>
                 </div>
