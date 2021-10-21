@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-
+import { Input, Button, Progress, Divider } from "antd";
 class Level1 extends Component {
 
     render() {
         return (
             <div style={{padding: '1rem', border: '1px solid grey', borderRadius: '4px', maxWidth:400, margin: '3rem auto' }}>
                 <h1> Vocaburary Game</h1>
+
+                <Progress percent={25} status="active"/>
 
                 <div style={{display: 'flex', justifyContent: 'space-between' }}>
                     <h2>LEVEL 1</h2>
@@ -21,7 +23,7 @@ class Level1 extends Component {
 
                 <form style={{ padding: '1rem 0'}}>
                     <div style={{ display: 'flex' }}>
-                        <input
+                        <Input
                             name="value"
                             onChange
                             value
@@ -29,13 +31,13 @@ class Level1 extends Component {
                             type="text"
                         />
 
-                        <button
+                        <Button
                             className
                             type="submit"
                             onClick
                         > 
                             Submit
-                        </button>
+                        </Button>
 
 
                     </div>
@@ -43,17 +45,17 @@ class Level1 extends Component {
                 </form>
                 {/*Timer*/}
                 <div style= {{ display: 'flex' , justifyContent: 'space-between' }}>
-                    <button>5</button>
-                    <button>4</button>
-                    <button>3</button>
-                    <button>2</button>
-                    <button>1</button>
-                    <button
+                    <Button>5</Button>
+                    <Button>4</Button>
+                    <Button>3</Button>
+                    <Button>2</Button>
+                    <Button>1</Button>
+                    <Button
                     >
                         Click to Restart
-                        </button>
+                        </Button>
                 </div>
-
+                <Divider/>
                 {/* Results */}
                     <h3>Wrong ! Correct answer: </h3>
                     <div>
@@ -79,8 +81,8 @@ class Level1 extends Component {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'space-evenly'}}>
-                        <button>Retry</button>
-                        <button>Level2</button>
+                        <Button>Retry</Button>
+                        <Button>Level2</Button>
                     </div>
             </div>
         )
