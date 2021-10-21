@@ -14,6 +14,41 @@ class Level1 extends Component {
         wrondAnswers: [],
     }
 
+
+    componentDidMount() {
+        this.randomTense()
+        this.startTimeOut()
+    }
+
+    startTimeOut = () => {
+        this.timeout = setTimeout(() => {
+            this.setState({ timeOut: true})
+        }, 10000)
+
+        this.interval = setInterval(() => {
+            this.setState({ timer: this.state.timer -1})
+        }, 1000)
+    }
+
+    componentDidMount() {
+        clearTimeout(this.timeout)
+        clearInterval(this.interval)
+    }
+
+    componentDidUpdate() {
+        if(this.state.timer === 0) {
+            clearInterval(this.interval)
+        }
+    }
+
+    randomTense = async() => {
+        let TenseArray = ['simple', 'past']
+
+        // we need to get one tense between simple and past randomly
+        let randomTense = await TenseArray[Math.floor(Math.random() * TenseArray.length)]
+        this.setState({randomTense: randomTense})
+    }
+
     render() {
         return (
             <div style={{padding: '1rem', border: '1px solid grey', borderRadius: '4px', maxWidth:400, margin: '3rem auto' }}>
