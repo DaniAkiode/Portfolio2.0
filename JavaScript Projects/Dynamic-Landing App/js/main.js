@@ -50,7 +50,27 @@ function setBgGreet() {
     }
 }
 
+// Get Name
+
+function getName() {
+    if(localStorage.getItem('name')===null){
+        name.textContent = '[Enter Name]';
+    } else {
+        name.textContent = localStorage.getItem('name');
+    }
+}
+
+function getFocus() {
+    if(localStorage.getItem('focus')===null){
+        focus.textContent = '[Enter Focus]';
+    } else {
+        focus.textContent = localStorage.getItem('name');
+    }
+}
+
 //Run
-showTime()
-setBgGreet()
+showTime();
+setBgGreet();
+getName();
+getFocus();
 
