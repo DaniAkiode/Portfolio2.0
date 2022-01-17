@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Format JavaScript</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Amount" id="money">
+    <button id="btn"> Convert to money!</button><br><br>
+    <div id="output"></div>
+
+    <script>
+        var b = document.getElementById("btn");
+        b.addEventListener("click", function(){
+            var m = document.getElementById("money").value;
+            var numUSB  = new Intl.NumberFormat("en-GB", {
+                style:"currency",
+                currency: "GBP"
+            })
+            document.getElementById("output").innerHTML = "The newly formatted currency number is " + numUSB.format(m);
+        })
+    </script>
+    
+</body>
+</html>
