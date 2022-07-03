@@ -21,7 +21,7 @@ objToJson.addEventListener('click', () =>{
     let myObj = {};
     myObj.username = username.value;
     myObj.email = email.value;
-    myObj.age = age;
+    myObj.age = age.value;
 
     let json = JSON.stringify(myObj);
     document.querySelector('#jsonData').innerText = json; 
