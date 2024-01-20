@@ -15,7 +15,7 @@ class RandomComputerPlayer(Player):
         super().__init__(letter)
 
     def get_move(self, game):
-        pass
+        sqaure = random.choice(game.avaialable_moves)
 
 class HumanPlayer(Player):
     def __init__ (self, letter):
